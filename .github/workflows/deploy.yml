@@ -37,6 +37,7 @@ jobs:
       - name: Upload build
         uses: actions/upload-pages-artifact@v3
         with:
+          name: portfolio-pages-build
           path: dist
 
   deploy:
