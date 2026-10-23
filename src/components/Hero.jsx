@@ -108,7 +108,7 @@ export default function Hero() {
                             flex items-center justify-center">
               
               <img
-                src={`${import.meta.env.BASE_URL}images/profile.jpg`}
+                src={`${import.meta.env.BASE_URL}/mon-portfolio/images/profile.jpg`}
                 alt="Achraf El Boumashouli"
                 className="w-full h-full object-cover object-top"
                 onError={e => {
