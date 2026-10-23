@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Prevent flash of wrong theme */
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-ground text-ink antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .dark body {
+    @apply bg-dark-ground text-dark-ink;
+  }
+
+  ::selection { @apply bg-accent/20 text-accent; }
+  .dark ::selection { @apply bg-dark-accent/20 text-dark-accent; }
+
+  :focus-visible { @apply outline-2 outline-offset-2 outline-accent; }
+  .dark :focus-visible { @apply outline-dark-accent; }
+}
+
+@layer components {
+  /* Container */
+  .site-container {
+    @apply max-w-[1320px] mx-auto px-6 sm:px-10 lg:px-16;
+  }
+
+  /* Section spacing */
+  .section-py { @apply py-20 lg:py-28; }
+
+  /* Section header */
+  .s-eyebrow {
+    @apply text-[11px] font-semibold tracking-[0.1em] uppercase text-accent mb-2.5;
+  }
+  .dark .s-eyebrow { @apply text-dark-accent; }
+
+  .s-title {
+    @apply font-display text-[38px] font-extrabold tracking-[-1px] text-ink leading-tight;
+  }
+  .dark .s-title { @apply text-dark-ink; }
+
+  /* Cards */
+  .card {
+    @apply bg-surface border border-border rounded-none;
+  }
+  .dark .card {
+    @apply bg-dark-surface border-dark-border;
+  }
+  .card-hover {
+    @apply card transition-colors duration-150 hover:bg-[#FAFAFF];
+  }
+  .dark .card-hover {
+    @apply hover:bg-[#161c2e];
+  }
+
+  /* Skill item tag */
+  .skill-item {
+    @apply text-[12px] font-normal text-ink2 px-2.5 py-1
+           border border-border rounded-[4px] bg-ground;
+  }
+  .dark .skill-item {
+    @apply text-dark-ink2 border-dark-border bg-dark-ground;
+  }
+
+  /* Tech tag in projects/experience */
+  .tech-tag {
+    @apply text-[11.5px] font-medium text-ink2 bg-ground
+           border border-border rounded-[4px] px-2 py-0.5;
+  }
+  .dark .tech-tag {
+    @apply text-dark-ink2 bg-dark-ground border-dark-border;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 h-[46px] px-7
+           font-sans text-[13.5px] font-medium tracking-wide
+           text-white bg-accent rounded-lg border-none
+           transition-all duration-150
+           hover:bg-indigo-700 hover:-translate-y-px;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 h-[46px] px-6
+           font-sans text-[13.5px] font-medium
+           text-ink bg-transparent
+           border border-border rounded-lg
+           transition-all duration-150
+           hover:border-ink2 hover:-translate-y-px;
+  }
+  .dark .btn-outline {
+    @apply text-dark-ink border-dark-border hover:border-dark-ink2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2
+           text-[12.5px] font-medium text-ink2
+           border border-border rounded-lg
+           transition-all duration-150
+           hover:border-ink2 hover:text-ink;
+  }
+  .dark .btn-ghost {
+    @apply text-dark-ink2 border-dark-border hover:border-dark-ink2 hover:text-dark-ink;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+.dark ::-webkit-scrollbar-thumb { background: #1E2640; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
