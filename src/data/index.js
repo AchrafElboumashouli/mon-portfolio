@@ -6,8 +6,8 @@ export const personal = {
   location: "Fès, Morocco",
   email: "elboumashouli.achraf@etu.uae.ac.ma",
   phone: "+212 638-559-959",
-  github: "https://github.com/achraf-el-boumashouli", // placeholder — update with real URL from GitHub on CV
-  linkedin: "https://www.linkedin.com/in/achraf-el-boumashouli", // placeholder — update from LinkedIn on CV
+  github: "https://github.com/AchrafElboumashouli", 
+  linkedin: "https://www.linkedin.com/in/el-boumashouli-achraf/", 
   seeking: "Open to internships in Data Engineering, Data Analytics, Machine Learning, or Cloud Computing",
 };
 
