@@ -106,12 +106,17 @@ export default function Hero() {
                             shadow-[0_24px_64px_rgba(79,70,229,0.14),0_4px_16px_rgba(15,23,42,0.06)]
                             dark:shadow-[0_24px_64px_rgba(79,70,229,0.25),0_4px_16px_rgba(0,0,0,0.3)]
                             flex items-center justify-center">
+              
               <img
-                src="/images/profile.jpg"
+                src={`${import.meta.env.BASE_URL}images/profile.jpg`}
                 alt="Achraf El Boumashouli"
                 className="w-full h-full object-cover object-top"
-                onError={e => { e.currentTarget.style.display = 'none'; e.currentTarget.nextElementSibling.style.display = 'flex'; }}
+                onError={e => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.nextElementSibling.style.display = 'flex';
+                }}
               />
+
               {/* Placeholder shown if image missing */}
               <div className="hidden flex-col items-center gap-2 text-center p-4">
                 <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
