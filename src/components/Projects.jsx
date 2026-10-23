@@ -60,7 +60,7 @@ export default function Projects() {
           {/* Placeholder panel */}
           <div className="hidden lg:flex items-center justify-center border-l border-border dark:border-dark-border bg-surface dark:bg-dark-surface p-8">
             <img
-              src="/images/aws-data-lake.jpg"
+              src={`${import.meta.env.BASE_URL}/mon-portfolio/images/aws-data-lake.jpg`}
               alt="AWS Data Lake Architecture"
               className="w-full max-w-[420px] h-auto object-contain rounded-lg shadow-md"
             />
